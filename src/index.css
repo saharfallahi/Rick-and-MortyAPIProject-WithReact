@@ -74,9 +74,54 @@ button {
   background-color: var(--slate-600);
 }
 
+.modal {
+  width: 98%;
+  min-height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--slate-900);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 50px var(--slate-600);
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--slate-600);
+}
+
 .icon {
   width: 1.6rem;
   height: 1.6rem;
 }
+
+.modal__header .close {
+  color: var(--rose-500);
+}
+
+.modal__header .title {
+  color: var(--slate-200);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    max-width: 30rem;
+  }
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(63, 69, 76, 0.8);
+}
+
 
 

@@ -1,59 +1,60 @@
-import Navbar, { Search, SearchResult } from "./components/Navbar";
+import Navbar, { Favorites, Search, SearchResult } from "./components/Navbar";
 import "./App.css";
 import CharacterList from "./components/CharacterList";
 import CharacterDetail from "./components/CharacterDetail";
 import { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import axios from "axios";
+import { Toaster } from "react-hot-toast";
+import useCharacters from "./hooks/useCharacters";
+import useLocalStorage from "./hooks/useLocalStorage";
+
 
 function App() {
-  const [characters, setCharacters] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [query, setQuery] = useState("");
+  const { isLoading, characters } = useCharacters(
+    "https://rickandmortyapi.com/api/character?name",
+    query
+  );
   const [selectedId, setSelectedId] = useState(null);
+  const [favorites, setFavorites] = useLocalStorage("FAVORITES",[]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
-        const { data } = await axios.get(
-          `https://rickandmortyapi.com/api/character?name=${query}`
-        );
-        setCharacters(data.results.slice(0, 5));
-      } catch (error) {
-        setCharacters([]);
-        toast.error(error.response.data.error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    // if (query.length < 3) {
-    //   setCharacters([]);
-    //   return;
-    // }
-    fetchData();
-  }, [query]);
-
-  const handleSelectCharacter = (id) => {    
-    setSelectedId((prevId)=>prevId===id ? null: id);
-
+  const handleSelectCharacter = (id) => {
+    setSelectedId((prevId) => (prevId === id ? null : id));
   };
+
+  const handleAddFavorites = (character) => {
+    setFavorites((prevFav) => [...prevFav, character]);
+  };
+
+  const handleDeleteFavorites = (id) => {
+    setFavorites((prevFav) => prevFav.filter((fav) => fav.id !== id));
+  };
+
+  const isInFavorites = favorites.map((fav) => fav.id).includes(selectedId);
 
   return (
     <div className="app">
       <Toaster />
+
       <Navbar>
         <Search query={query} setQuery={setQuery} />
         <SearchResult numOfResults={characters.length} />
+        <Favorites
+          favorites={favorites}
+          onDeleteFavorites={handleDeleteFavorites}
+        />
       </Navbar>
       <div className="main">
         <CharacterList
-        selectedId={selectedId}
+          selectedId={selectedId}
           characters={characters}
           isLoading={isLoading}
           onSelectCharacter={handleSelectCharacter}
         />
-        <CharacterDetail selectedId={selectedId} />
+        <CharacterDetail
+          selectedId={selectedId}
+          onAddFavorites={handleAddFavorites}
+          isInFavorites={isInFavorites}
+        />
       </div>
     </div>
   );
