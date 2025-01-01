@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="app">
-      {/* <Toaster /> */}
+      <Toaster />
       <Navbar>
         <Search query={query} setQuery={setQuery} />
         <SearchResult numOfResults={characters.length} />
