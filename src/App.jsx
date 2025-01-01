@@ -2,7 +2,7 @@ import Navbar, { Favorites, Search, SearchResult } from "./components/Navbar";
 import "./App.css";
 import CharacterList from "./components/CharacterList";
 import CharacterDetail from "./components/CharacterDetail";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Toaster } from "react-hot-toast";
 import useCharacters from "./hooks/useCharacters";
 import useLocalStorage from "./hooks/useLocalStorage";
@@ -33,8 +33,7 @@ function App() {
 
   return (
     <div className="app">
-      <Toaster />
-
+      {/* <Toaster /> */}
       <Navbar>
         <Search query={query} setQuery={setQuery} />
         <SearchResult numOfResults={characters.length} />

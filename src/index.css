@@ -34,11 +34,12 @@ button {
   outline: none;
 }
 .text-field {
+  width: 50%;
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
   color: var(--slate-100);
   background-color: var(--slate-500);
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 }
 
 .text-field::placeholder {
@@ -66,7 +67,7 @@ button {
   white-space: nowrap;
   padding: 0.3rem 1rem;
   border-radius: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-weight: 700;
 }
 
@@ -75,7 +76,7 @@ button {
 }
 
 .modal {
-  width: 98%;
+  width: 90%;
   min-height: 250px;
   position: absolute;
   top: 50%;
@@ -111,7 +112,16 @@ button {
 
 @media (min-width: 768px) {
   .modal {
+    width: 98%;
     max-width: 30rem;
+  }
+  .text-field {
+    width: auto;
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+  }
+  .badge {
+    font-size: 0.8rem;
   }
 }
 
@@ -125,3 +135,6 @@ button {
 
 
 
+svg text{
+  text-anchor:middle;
+}

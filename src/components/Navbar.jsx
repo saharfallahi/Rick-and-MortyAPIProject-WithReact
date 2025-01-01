@@ -15,7 +15,9 @@ function Navbar({ children }) {
 export default Navbar;
 
 function Logo() {
-  return <div className="navbar__logo">logo 😍</div>;
+  return <div className="navbar__logo">
+    <img src="/public/rick and morty logo.png" alt="" />
+  </div>;
 }
 
 export function Search({ query, setQuery }) {
