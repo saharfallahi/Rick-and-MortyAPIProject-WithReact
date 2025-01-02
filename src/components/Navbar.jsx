@@ -16,7 +16,7 @@ export default Navbar;
 
 function Logo() {
   return <div className="navbar__logo">
-    <img src="/public/static/images/logo.png" alt="RickandMorty-logo" />
+    <img src="/logo.png" alt="RickandMorty-logo" />
   </div>;
 }
 
