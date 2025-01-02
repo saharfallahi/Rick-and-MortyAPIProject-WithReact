@@ -86,6 +86,7 @@ button {
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 1px 1px 50px var(--slate-600);
+  z-index: 1000;
 }
 
 .modal__header {
@@ -131,10 +132,8 @@ button {
   position: fixed;
   inset: 0;
   background-color: rgba(63, 69, 76, 0.8);
+  z-index: 999;
 }
 
 
 
-svg text{
-  text-anchor:middle;
-}
