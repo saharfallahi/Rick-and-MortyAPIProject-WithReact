@@ -4,7 +4,9 @@ This project is based on the Rick and Morty API and implemented by React and the
 
 ## Screenshots
 
-![rickandmortyApp screenshot](https://github.com/user-attachments/assets/01953450-a5b4-4816-8fac-624429f5f72f)
+
+![RickandMortyAppScreenshot](https://github.com/user-attachments/assets/123a620c-73f6-4a1a-b546-efd7784f9335)
+
 
 ## API Reference
 
