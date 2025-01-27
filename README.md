@@ -1,4 +1,4 @@
-# Project Title
+# Rick and Morty Api Project
 
 This project is based on the Rick and Morty API and implemented by React and the ability search characters and sort their episodes and add character to favorites
 
