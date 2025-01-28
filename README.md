@@ -33,7 +33,11 @@ This project is based on the Rick and Morty API and implemented by React and the
 To deploy this project run
 
 ```bash
-  npm run dev
+  npm i
+```
+
+```bash
+  npm run start
 ```
 
 ## Authors
@@ -72,7 +76,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
 
