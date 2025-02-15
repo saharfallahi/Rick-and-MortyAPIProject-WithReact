@@ -7,6 +7,12 @@ This project is based on the Rick and Morty API and implemented by React and the
 
 ![RickandMortyAppScreenshot](https://github.com/user-attachments/assets/123a620c-73f6-4a1a-b546-efd7784f9335)
 
+## Logo
+
+
+![rick-and-morty-tv-logo](https://github.com/user-attachments/assets/578045af-89e2-47e8-987b-d87ed888c463)
+
+
 ## Demo
 
 https://rick-and-morty-api-project-with-react.vercel.app/
